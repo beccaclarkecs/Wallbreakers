@@ -3,30 +3,20 @@
 //Array A
 //Non-negative numbers
 //Return array - even elements, odd elements
-//
 
 
-class Solution {
-private:
-    public:
-        vector<int> sortArrayByParity(vector<int>& A) {
-
-        vector<int> B;  
-            
-        for (int i = 0; i < A.size(); i++){
-            if(A[i]%2 == 0){
-                    //even put up front
-                    B.insert (B.begin(), A[i]);
-                
-            } else {
-                    //end put in back
-                    B.push_back (A[i]);
-
-            }
-        }
-                
-        return B;   
-        
-        
-    }
-};
+class Solution:
+    def sortArrayByParity(self, A: List[int]) -> List[int]:
+        B = []
+        i = 0
+        while i < len(A):
+            if A[i] % 2 == 0:
+                #print("even")
+                #add to front
+                B.insert(0,A[i])
+            else:
+                #print("odd")
+                #add to back
+                B.append(A[i])
+            i += 1
+        return B
